@@ -8,18 +8,19 @@ namespace BlazingPizza
         public Pizza ConfiguringPizza { get; private set; }
         public Order Order { get; private set; } = new Order();
 
-        public void ShowConfigurePizzaDialog(PizzaSpecial special)
-        {
-            ConfiguringPizza = new Pizza()
-            {
-                Special = special,
-                SpecialId = special.Id,
-                Size = Pizza.DefaultSize,
-                Toppings = new List<PizzaTopping>(),
-            };
+       public void ShowConfigurePizzaDialog(PizzaSpecial special)
+{
+    ConfiguringPizza = new Pizza()
+    {
+        Special = special,
+        SpecialId = special.Id,
+        Toppings = new List<PizzaTopping>(),
+    };
 
-            ShowingConfigureDialog = true;
-        }
+    ConfiguringPizza.Size = ConfiguringPizza.DefaultSize;
+
+    ShowingConfigureDialog = true;
+}
 
         public void CancelConfigurePizzaDialog()
         {
